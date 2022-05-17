@@ -88,6 +88,7 @@ const SignUp = () => {
     console.log(nameValue);
     console.log(phoneValue);
     navigate("/barchart");
+    resetEmail();
     resetName();
     resetCnfPassword();
     resetPassword();

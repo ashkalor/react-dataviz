@@ -1,10 +1,13 @@
 import "../styles/BarChart.scss";
 import { useRef, useEffect, useState } from "react";
 import { select, axisBottom, axisRight, scaleLinear, scaleBand } from "d3";
+import * as d3 from "d3";
 
 const BarChart = () => {
   const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75]);
   const svgRef = useRef();
+  const width = 600;
+  const height = 300;
 
   useEffect(() => {
     const svg = select(svgRef.current);
@@ -26,10 +29,12 @@ const BarChart = () => {
 
     const xScale = scaleBand()
       .domain(data.map((value, index) => index))
-      .range([0, 600])
+      .range([0, width])
       .padding(0.5);
 
-    const yScale = scaleLinear().domain([0, 150]).range([300, 0]);
+    const yScale = scaleLinear()
+      .domain([0, d3.max(data, (d) => d)])
+      .range([height, 0]);
 
     const xAxis = axisBottom(xScale).ticks(data.length);
 
@@ -52,11 +57,11 @@ const BarChart = () => {
 
       .style("transform", "scale(1, -1)")
       .attr("x", (value, index) => xScale(index))
-      .attr("y", -300)
+      .attr("y", -height)
       .attr("width", xScale.bandwidth())
       .transition()
       .attr("fill", "url(#bg-gradient)")
-      .attr("height", (value) => 300 - yScale(value));
+      .attr("height", (value) => height - yScale(value));
   }, [data]);
 
   const updateHandler = () => {
@@ -82,8 +87,8 @@ const BarChart = () => {
         <svg
           onClick={updateHandler}
           className="barchart__chart"
-          width={600}
-          height={300}
+          width={width}
+          height={height}
           ref={svgRef}
         >
           <g className="barchart__xaxis" />
