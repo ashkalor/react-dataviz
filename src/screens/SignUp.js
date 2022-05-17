@@ -3,9 +3,11 @@ import backdrop from "../assets/backdrop.png";
 import { useState } from "react";
 import useInput from "../hooks/use-input";
 import { isName, isEmail, isPassword, isPhoneNo } from "../constants/functions";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
 
   const {
     value: emailValue,
@@ -85,7 +87,7 @@ const SignUp = () => {
     console.log(passwordValue);
     console.log(nameValue);
     console.log(phoneValue);
-    resetEmail();
+    navigate("/barchart");
     resetName();
     resetCnfPassword();
     resetPassword();
