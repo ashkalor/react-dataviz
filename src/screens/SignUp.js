@@ -1,7 +1,10 @@
 import "../styles/SignUp.scss";
 import backdrop from "../assets/backdrop.png";
+import { useState } from "react";
 
 const SignUp = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
   const submitHandler = (event) => {
     event.preventDefault();
   };
@@ -24,13 +27,18 @@ const SignUp = () => {
                 <label htmlFor="Email" className="form__label">
                   Your email address
                 </label>
-                <input type="text" className="form__input form__input--focus" />
+                <input
+                  type="text"
+                  name="Email"
+                  className="form__input form__input--focus"
+                />
               </div>
               <div className="form__content">
                 <label htmlFor="Password" className="form__label">
                   Your password
                 </label>
                 <input
+                  name="Password"
                   type="password"
                   className="form__input form__input--focus"
                 />
@@ -40,6 +48,7 @@ const SignUp = () => {
                   Confirm your password
                 </label>
                 <input
+                  name="Confirm password"
                   type="password"
                   className="form__input form__input--focus"
                 />
@@ -48,18 +57,30 @@ const SignUp = () => {
                 <label htmlFor="Full Name" className="form__label">
                   Your full name
                 </label>
-                <input type="text" className="form__input form__input--focus" />
+                <input
+                  name="Full Name"
+                  type="text"
+                  className="form__input form__input--focus"
+                />
               </div>
               <div className="form__content">
                 <label htmlFor="Phone Number" className="form__label">
                   Your phone number
                 </label>
-                <input type="text" className="form__input form__input--focus" />
+                <input
+                  name="Phone Number"
+                  type="text"
+                  className="form__input form__input--focus"
+                />
               </div>
               <div className="form__content form__content--checkbox">
                 <input
+                  name="Terms and conditions"
                   type="checkbox"
                   className="form__input form__input--checkbox"
+                  onChange={() => {
+                    setIsChecked(!isChecked);
+                  }}
                 />
                 <label
                   htmlFor="Terms and conditions"
