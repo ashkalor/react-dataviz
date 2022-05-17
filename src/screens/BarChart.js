@@ -77,7 +77,7 @@ const BarChart = () => {
   return (
     <div className="barchart">
       <div className="barchart__card">
-        <div className="barchart__title">BAR CHART</div>
+        <div className="barchart__title">Bar Chart</div>
 
         <svg
           onClick={updateHandler}

@@ -26,10 +26,6 @@
         margin-bottom: 5rem;
         overflow: visible
     }
-    &__bar{
-        background: rgb(9,9,121);
-        background: linear-gradient(3600deg, rgba(9,9,121,1) 0%, rgba(0,255,255,1) 85%);
-    }
     &__btnContainer{
         display: flex;
         gap:1rem;
