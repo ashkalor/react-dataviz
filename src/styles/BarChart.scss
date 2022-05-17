@@ -1,0 +1,47 @@
+@import "./_colors.scss";
+@import "./_button.scss";
+
+
+.barchart{
+    background-color: $shadow-color;
+    &__card{
+        
+        width: 80%;
+        margin:3rem auto;
+        background-color: white;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        
+    }
+    &__title{
+        margin: 3rem 0;
+        font-size: 3em;
+        font-weight: 700;
+    }
+    &__chart{
+        margin-bottom: 5rem;
+        overflow: visible
+    }
+    &__bar{
+        background: rgb(9,9,121);
+        background: linear-gradient(3600deg, rgba(9,9,121,1) 0%, rgba(0,255,255,1) 85%);
+    }
+    &__btnContainer{
+        display: flex;
+        gap:1rem;
+    }
+    &__button{
+        @include button;
+        outline: none;
+        margin-bottom: 3rem;
+        width: 12rem;
+    }
+    &__button:hover{
+        @include hover;
+    }
+
+}

@@ -75,7 +75,7 @@
         }
     }
     &__label{
-        color: $text-color;
+        color: $gray-500;
 
         &--checkbox{
             font-weight: 700;
@@ -112,12 +112,16 @@
         @include button;
         &--disabled{
             @include button;
-            background-color: $gray-300 ;
+            background-color: $secondary-color;
             pointer-events: none;
         }
     }
     &__btn:hover{
         @include hover;
+
+    }
+    &__btn:focus{
+        outline: none;
 
     }
     &__error{
