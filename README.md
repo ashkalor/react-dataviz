@@ -11,6 +11,10 @@ React data visualization project is a frontend application built using React and
 - D3.js
 - Sass
 - React Router
+- Vercel
+
+## Demo 
+Link : https://react-dataviz-plum.vercel.app/
 
 ## Installation and Setup Instructions
 
