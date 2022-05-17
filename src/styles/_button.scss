@@ -1,0 +1,17 @@
+@import './_colors.scss';
+
+@mixin button {
+    cursor: pointer;
+    padding: 0.6rem 3rem;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    
+}
+
+@mixin hover {
+
+    background-color: $blue-400;
+
+}

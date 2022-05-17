@@ -1,7 +1,9 @@
+import SignUp from "./screens/SignUp";
+
 function App() {
   return (
     <div>
-      <h1>Hello world</h1>
+      <SignUp />
     </div>
   );
 }
